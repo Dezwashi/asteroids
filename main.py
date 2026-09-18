@@ -11,6 +11,8 @@ def main():
 
     pygame.init()
     screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
+    clock = pygame.time.Clock() #create Clock object, not visible
+    dt = 0.0
 
     while True:
         log_state()
@@ -18,9 +20,9 @@ def main():
             if event.type == pygame.QUIT:
                 return
 
-
-    fill(black)
-    display.flip()
+        screen.fill("black") # screen is a variable, '.fill' is a method for applying color
+        pygame.display.flip() # update the display to the screen, it's what makes animations possible
+        dt = clock.tick(60) / 1000 # Clock is a variable, method is for defining FPS
 
 if __name__ == "__main__":
     main()
