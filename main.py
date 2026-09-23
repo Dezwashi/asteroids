@@ -24,6 +24,7 @@ def main():
 
         screen.fill("black") # screen is a variable, '.fill' is a method for applying color
         player.draw(screen)
+        player.update(dt)
         pygame.display.flip() # update the display to the screen, it's what makes animations possible
         dt = clock.tick(60) / 1000 # Clock is a variable, method is for defining FPS
 
